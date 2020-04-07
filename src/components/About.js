@@ -1,37 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import arrow from '../images/arrow.svg'
-import catFootprint from '../images/cat-footprint.svg'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const StyledContainer = styled.div`
   width: 100vw;
   height: 100%;
-  background-color: hsl(180, 50%, 85%);
-  background-image: url(${catFootprint});
-  background-size: 100%;
-  overflow: hidden;
+  background-color: hsl(0, 20%, 90%);
 `
 const StyledImageContainer = styled.div`
   width: 95%;
   border: 15px solid white;
   background-color: white;
-
-  img:hover {
-    opacity: 0;
-  }
 `
 
 const StyledDescription = styled.div`
   display: flex;
   flex-direction: column;
   width: 95%;
-  height: 200px;
   margin: 0 auto;
 
   h1 {
-    margin: 20px auto 0 auto;
+    margin-bottom: 0;
     text-transform: uppercase;
     font-size: 3rem;
     letter-spacing: -1px;
@@ -39,28 +29,18 @@ const StyledDescription = styled.div`
   .grey {
     color: #595959;
   }
-  a {
-    margin-top: 40px;
-    text-decoration: none;
-    color: black;
 
-    img {
-      height: 1.5rem;
-      margin: 0 0 -2px 20px;
-      transition: all 200ms ease-in-out;
-    }
-    :hover img {
-      transform: translateX(10px);
-    }
+  p {
+    position: relative;
   }
 `
 
-const Header = () => {
+const About = () => {
   const data = useStaticQuery(graphql`
     {
-      file(relativePath: { eq: "cat-main.jpg" }) {
+      file(relativePath: { eq: "photographer.jpg" }) {
         childImageSharp {
-          fluid(grayscale: true) {
+          fluid(grayscale: false) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
@@ -73,14 +53,23 @@ const Header = () => {
         <Img fluid={data.file.childImageSharp.fluid} />
       </StyledImageContainer>
       <StyledDescription>
-        <h1 className="grey">we chage the world</h1>
-        <h1>one pictuer at a time</h1>
-        <a href="https://google.com">
-          Book an appointment <img src={arrow} alt="arrow-icon" />
-        </a>
+        <h1 className="grey">our</h1>
+        <h1>story</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+          accusantium delectus iste deserunt vel eos reprehenderit illo alias
+          fugit molestiae dolorem quidem at dolor labore temporibus deleniti
+          earum, nesciunt incidunt.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
+          possimus vero qui! Totam, vel facere? Dicta error quasi ea, repellat
+          nemo debitis ullam sapiente excepturi obcaecati perferendis nam fugiat
+          alias!
+        </p>
       </StyledDescription>
     </StyledContainer>
   )
 }
 
-export default Header
+export default About

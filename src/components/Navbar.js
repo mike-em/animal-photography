@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
 import logo from '../images/animal_logo.svg'
 import MenuItems from './MenuItems'
@@ -96,12 +96,7 @@ const StyledMenuContainer = styled.div`
   transform: translate(${props => (props.toggle ? '0' : '100%')});
   z-index: 90;
 `
-const Navbar = () => {
-  const [state, setState] = useState(false)
-
-  const toggleMenu = () => {
-    setState(!state)
-  }
+const Navbar = ({ toggleMenu, state }) => {
   return (
     <>
       <StyledContainer>
