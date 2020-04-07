@@ -138,14 +138,14 @@ const Offer = () => {
         <h1>services</h1>
         <StyledButton>
           More Options
-          <img src={arrow} />
+          <img src={arrow} alt="arrow" />
         </StyledButton>
       </StyledDescription>
       <StyledImageContainer>
         <StyledOffer>
-          <img src={camera} alt="camera" alt="camera" />
+          <img src={camera} alt="camera" />
           <h2>photo session - 20</h2>
-          <p>20 Pictures</p>
+          <p>20 Photos</p>
           <p>£99</p>
           <StyledButton main>book now</StyledButton>
         </StyledOffer>

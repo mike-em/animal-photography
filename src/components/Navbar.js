@@ -99,7 +99,7 @@ const StyledMenuContainer = styled.div`
 const Navbar = ({ toggleMenu, state }) => {
   return (
     <>
-      <StyledContainer>
+      <StyledContainer id="top">
         <img src={logo} alt="logo" />
         <StyledHamburgerContainer onClick={toggleMenu}>
           <StyledHamburgerBox>
@@ -108,7 +108,7 @@ const Navbar = ({ toggleMenu, state }) => {
         </StyledHamburgerContainer>
       </StyledContainer>
       <StyledMenuContainer toggle={state}>
-        <MenuItems />
+        <MenuItems toggleMenu={toggleMenu} />
       </StyledMenuContainer>
     </>
   )

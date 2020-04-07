@@ -9,10 +9,11 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
+  transition: all 200ms ease-in-out;
 
   .arrow-container {
     align-self: center;
-    margin-top: 30px;
+    margin: 30px 0;
     width: 40px;
     transition: all 200ms ease-in-out;
 
@@ -26,6 +27,7 @@ const StyledImagesContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 3px;
   width: 100%;
+  transition: all 200ms ease-in-out;
 `
 
 const Gallery = () => {
@@ -55,7 +57,7 @@ const Gallery = () => {
     featured.push(images[i])
   }
   return (
-    <StyledContainer>
+    <StyledContainer id="gallery">
       {state ? (
         <StyledImagesContainer>
           {images.map((item, index) => (

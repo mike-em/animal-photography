@@ -48,7 +48,7 @@ const About = () => {
     }
   `)
   return (
-    <StyledContainer>
+    <StyledContainer id="about">
       <StyledImageContainer>
         <Img fluid={data.file.childImageSharp.fluid} />
       </StyledImageContainer>

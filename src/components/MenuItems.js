@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import links from '../utils/menuLinks'
 import social from '../utils/socialLinks'
 
@@ -35,13 +35,13 @@ const StyledSocialContainer = styled.div`
   }
 `
 
-const MenuItems = () => {
+const MenuItems = ({ toggleMenu }) => {
   return (
-    <StyledContainer>
+    <StyledContainer onClick={toggleMenu}>
       {links.map((item, index) => (
-        <AniLink fade to={item.path} key={index}>
+        <AnchorLink href={item.path} key={index}>
           {item.text}{' '}
-        </AniLink>
+        </AnchorLink>
       ))}
       <StyledSocialContainer>
         {social.map((item, index) => (
