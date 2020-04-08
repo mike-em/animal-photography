@@ -17,10 +17,6 @@ const StyledImageContainer = styled.div`
   width: 95%;
   border: 15px solid white;
   background-color: white;
-
-  img:hover {
-    opacity: 0;
-  }
 `
 
 const StyledDescription = styled.div`
@@ -40,13 +36,15 @@ const StyledDescription = styled.div`
     color: #595959;
   }
   a {
+    display: flex;
     margin-top: 40px;
     text-decoration: none;
     color: black;
 
     img {
+      align-self: center;
       height: 1.5rem;
-      margin: 0 0 -2px 20px;
+      margin: 0 20px;
       transition: all 200ms ease-in-out;
     }
     :hover img {

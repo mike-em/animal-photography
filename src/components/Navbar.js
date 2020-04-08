@@ -2,6 +2,8 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import logo from '../images/animal_logo.svg'
 import MenuItems from './MenuItems'
+import arrow from '../images/arrow-down.svg'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -96,6 +98,30 @@ const StyledMenuContainer = styled.div`
   transform: translate(${props => (props.toggle ? '0' : '100%')});
   z-index: 90;
 `
+const GoUp = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: hsl(150, 40%, 80%);
+  background-image: url(${arrow});
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: 48%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  transform: rotate(180deg);
+  opacity: 0.6;
+  transition: all 200ms ease-in-out;
+  visibility: ${({ visible }) => (visible ? 'hidden' : 'visible')};
+
+  :hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+`
+
 const Navbar = ({ toggleMenu, state }) => {
   return (
     <>
@@ -110,6 +136,9 @@ const Navbar = ({ toggleMenu, state }) => {
       <StyledMenuContainer toggle={state}>
         <MenuItems toggleMenu={toggleMenu} />
       </StyledMenuContainer>
+      <AnchorLink href="#top">
+        <GoUp visible={state} />
+      </AnchorLink>
     </>
   )
 }
