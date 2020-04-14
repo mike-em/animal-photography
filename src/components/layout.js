@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled, { createGlobalStyle, css } from 'styled-components'
 import Navbar from './Navbar'
-import { device } from '../utils/device'
+import { window } from 'browser-monads'
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');

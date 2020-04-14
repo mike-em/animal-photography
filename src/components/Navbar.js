@@ -4,8 +4,7 @@ import logo from '../images/animal_logo.svg'
 import MenuItems from './MenuItems'
 import { Link } from 'gatsby'
 import arrow from '../images/arrow-down.svg'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { device } from '../utils/device'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -151,7 +150,7 @@ const Navbar = ({ toggleMenu, state, scroll }) => {
       <StyledMenuContainer toggle={state}>
         <MenuItems toggleMenu={toggleMenu} />
       </StyledMenuContainer>
-      <AnchorLink href="#top">
+      <AnchorLink to="/#top">
         <GoUp fadeout={scroll} />
       </AnchorLink>
     </>

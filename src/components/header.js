@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import arrow from '../images/arrow.svg'
 import catFootprint from '../images/cat-footprint.svg'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { graphql, useStaticQuery } from 'gatsby'
 import { device } from '../utils/device'
 
@@ -117,7 +117,7 @@ const Header = () => {
       <StyledDescription>
         <h1 className="grey">we chage the world</h1>
         <h1>one picture at a time</h1>
-        <AnchorLink href="#offer">
+        <AnchorLink to="/#offer">
           Book an appointment <img src={arrow} alt="arrow-icon" />
         </AnchorLink>
       </StyledDescription>
