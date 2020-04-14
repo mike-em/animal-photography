@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import Layout from '../components/layout'
 import OneOffer from '../components/OneOffer'
 import Contact from '../components/Contact'
@@ -36,6 +36,10 @@ const StyledLink = styled(Link)`
     transform: rotate(180deg);
     margin-right: 10px;
     transition: transform 200ms ease-in-out;
+  }
+
+  :hover {
+    color: black;
   }
 
   :hover img {

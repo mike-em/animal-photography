@@ -7,6 +7,8 @@ import FollowUs from '../components/FollowUs'
 import Gallery from '../components/Gallery'
 import Contact from '../components/Contact'
 
+import '../components/layout.css'
+
 const IndexPage = () => (
   <Layout>
     <Header />

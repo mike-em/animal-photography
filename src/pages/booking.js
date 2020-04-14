@@ -37,9 +37,13 @@ const StyledFormContainer = styled.div`
 const StyledDateTime = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   min-width: 320px;
+
+  .ant-picker {
+    margin-right: 20px;
+    border: 1px solid hsl(0, 0%, 15%);
+  }
 `
 
 const StyledTitle = styled.div`
