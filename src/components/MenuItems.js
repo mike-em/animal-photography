@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import links from '../utils/menuLinks'
 import social from '../utils/socialLinks'
-import scrollTo from 'gatsby-plugin-smoothscroll'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const StyledContainer = styled.div`
