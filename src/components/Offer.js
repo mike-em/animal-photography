@@ -2,6 +2,8 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import arrow from '../images/arrow-light.svg'
 import camera from '../images/camera-simple.svg'
+import { Link } from 'gatsby'
+import { device } from '../utils/device'
 
 const StyledContainer = styled.div`
   width: 100vw;
@@ -27,6 +29,18 @@ const StyledImageContainer = styled.div`
   position: relative;
   z-index: 10;
 
+  @media ${device.tablet} {
+    width: 70%;
+  }
+
+  @media ${device.laptop} {
+    width: 60%;
+  }
+
+  @media ${device.desktop} {
+    width: 50%;
+  }
+
   :hover img {
     opacity: 0.8;
   }
@@ -47,6 +61,9 @@ const StyledDescription = styled.div`
     letter-spacing: -1px;
     color: white;
   }
+  a {
+    text-decoration: none;
+  }
 `
 
 const StyledButton = styled.button`
@@ -54,7 +71,7 @@ const StyledButton = styled.button`
   flex-direction: row;
   justify-content: space-between;
   align-self: center;
-  margin: 20px 0;
+  margin: 30px auto;
   color: hsl(150, 40%, 80%);
   background-color: transparent;
   width: 250px;
@@ -132,22 +149,26 @@ const StyledOffer = styled.div`
 
 const Offer = () => {
   return (
-    <StyledContainer>
+    <StyledContainer id="offer">
       <StyledDescription>
         <h1>our</h1>
         <h1>services</h1>
-        <StyledButton>
-          More Options
-          <img src={arrow} alt="arrow" />
-        </StyledButton>
+        <Link to="/offer">
+          <StyledButton>
+            More Options
+            <img src={arrow} alt="arrow" />
+          </StyledButton>
+        </Link>
       </StyledDescription>
       <StyledImageContainer>
         <StyledOffer>
           <img src={camera} alt="camera" />
-          <h2>photo session - 20</h2>
-          <p>20 Photos</p>
-          <p>£99</p>
-          <StyledButton main>book now</StyledButton>
+          <h2>photo session - 10</h2>
+          <p>10 Pictures</p>
+          <p>£49</p>
+          <Link to="/offer">
+            <StyledButton main>book now</StyledButton>
+          </Link>
         </StyledOffer>
       </StyledImageContainer>
     </StyledContainer>

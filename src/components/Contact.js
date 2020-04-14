@@ -2,12 +2,22 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import arrow from '../images/arrow-light.svg'
 import ContactForm from './ContactForm'
+import { Link } from 'gatsby'
 import links from '../utils/socialLinks'
+import { device } from '../utils/device'
 
 const StyledContainer = styled.div`
   width: 100vw;
   position: relative;
   background-color: hsl(0, 0%, 15%);
+
+  @media ${device.laptop} {
+    padding: 0 150px;
+  }
+
+  @media ${device.desktop} {
+    padding: 0 300px;
+  }
 
   .copy {
     text-align: center;
@@ -33,6 +43,14 @@ const StyledDescription = styled.div`
     color: white;
   }
 
+  h2 {
+    color: white;
+  }
+
+  h4 {
+    color: white;
+  }
+
   p {
     margin: 5px 0;
   }
@@ -48,7 +66,7 @@ const StyledButton = styled.button`
   flex-direction: row;
   justify-content: space-between;
   align-self: center;
-  margin: 30px 0 10px 0;
+  margin: 30px auto 10px auto;
   color: hsl(150, 40%, 80%);
   background-color: transparent;
   border: none;
@@ -102,10 +120,12 @@ const Contact = () => {
         <h4 style={{ marginBottom: '10px' }}>CONTACT US</h4>
         <a href="tel:555 55 55">555 55 55</a>
         <a href="mailto: hi@aminphoto.com">hi@animphoto.com</a>
-        <StyledButton>
-          Book session
-          <img src={arrow} alt="arrow" />
-        </StyledButton>
+        <Link to="/offer">
+          <StyledButton>
+            Book Session
+            <img src={arrow} alt="arrow" />
+          </StyledButton>
+        </Link>
       </StyledDescription>
       <ContactForm />
       <StyledSocialLinks>

@@ -2,8 +2,10 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import logo from '../images/animal_logo.svg'
 import MenuItems from './MenuItems'
+import { Link } from 'gatsby'
 import arrow from '../images/arrow-down.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { device } from '../utils/device'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -86,7 +88,7 @@ const StyledHamburgerInner = styled.span`
 const StyledMenuContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: hsl(180, 50%, 70%);
+  background-color: hsl(180, 50%, 85%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,7 +104,7 @@ const GoUp = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: hsl(150, 40%, 80%);
+  background-color: hsl(180, 50%, 70%);
   background-image: url(${arrow});
   background-repeat: no-repeat;
   background-size: 30%;
@@ -110,23 +112,36 @@ const GoUp = styled.div`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
+  z-index: 100;
   transform: rotate(180deg);
   opacity: 0.6;
   transition: all 200ms ease-in-out;
-  visibility: ${({ visible }) => (visible ? 'hidden' : 'visible')};
 
-  :hover {
+  ${({ fadeout }) =>
+      !fadeout &&
+      css`
+        opacity: 0;
+        visibility: hidden;
+      `}
+    :hover {
     opacity: 1;
     cursor: pointer;
   }
 `
 
-const Navbar = ({ toggleMenu, state }) => {
+const StyledLogo = styled(Link)`
+  width: 200px;
+  height: 80%;
+  margin-left: 20px;
+  background-image: url(${logo});
+  background-repeat: no-repeat;
+`
+
+const Navbar = ({ toggleMenu, state, scroll }) => {
   return (
     <>
       <StyledContainer id="top">
-        <img src={logo} alt="logo" />
+        <StyledLogo to="/" />
         <StyledHamburgerContainer onClick={toggleMenu}>
           <StyledHamburgerBox>
             <StyledHamburgerInner toggle={state} />
@@ -137,7 +152,7 @@ const Navbar = ({ toggleMenu, state }) => {
         <MenuItems toggleMenu={toggleMenu} />
       </StyledMenuContainer>
       <AnchorLink href="#top">
-        <GoUp visible={state} />
+        <GoUp fadeout={scroll} />
       </AnchorLink>
     </>
   )

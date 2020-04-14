@@ -2,7 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import links from '../utils/menuLinks'
+import otherLinks from '../utils/otherLinks'
 import social from '../utils/socialLinks'
+import { Link } from 'gatsby'
+import { window } from 'browser-monads'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -36,13 +39,20 @@ const StyledSocialContainer = styled.div`
 `
 
 const MenuItems = ({ toggleMenu }) => {
+  const path = window.location.pathname
   return (
     <StyledContainer onClick={toggleMenu}>
-      {links.map((item, index) => (
-        <AnchorLink href={item.path} key={index}>
-          {item.text}{' '}
-        </AnchorLink>
-      ))}
+      {path !== '/'
+        ? otherLinks.map((item, index) => (
+            <Link to={item.path} key={index}>
+              {item.text}{' '}
+            </Link>
+          ))
+        : links.map((item, index) => (
+            <AnchorLink href={item.path} key={index}>
+              {item.text}{' '}
+            </AnchorLink>
+          ))}
       <StyledSocialContainer>
         {social.map((item, index) => (
           <a href={item.url} key={index}>

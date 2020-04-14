@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import arrow from '../images/arrow.svg'
+import { device } from '../utils/device'
 
 const StyledContainer = styled.div`
   width: 100vw;

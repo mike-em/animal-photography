@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { createGlobalStyle, css } from 'styled-components'
 import Navbar from './Navbar'
+import { device } from '../utils/device'
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
@@ -46,16 +47,21 @@ const StyledContainer = styled.div`
 
 const Layout = ({ children }) => {
   const [state, setState] = useState(false)
+  const [scroll, setScroll] = useState(false)
 
   const toggleMenu = () => {
     setState(!state)
   }
 
+  window.addEventListener('scroll', e => {
+    window.pageYOffset > 300 ? setScroll(true) : setScroll(false)
+  })
+
   return (
     <>
       <GlobalStyle scroll={state} />
       <StyledContainer>
-        <Navbar toggleMenu={toggleMenu} state={state} />
+        <Navbar toggleMenu={toggleMenu} state={state} scroll={scroll} />
         {children}
       </StyledContainer>
     </>

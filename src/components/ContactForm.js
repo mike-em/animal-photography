@@ -43,6 +43,12 @@ const StyledInputName = styled.input`
   font-size: 1.8rem;
   color: white;
   border-radius: 0;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    background-color: hsla(150, 40%, 80%, 0.2);
+  }
+
   &:required {
     box-shadow: none;
   }
@@ -51,6 +57,8 @@ const StyledInputName = styled.input`
   }
   &:focus {
     border-bottom: 1px solid white;
+    background-color: hsla(150, 40%, 80%, 0.2);
+
     &:focus + ${Label}, &:valid + ${Label} {
       transform: translate(-5px, -30px) scale(0.8);
       color: white;
@@ -77,6 +85,11 @@ const StyledInputEmail = styled.input`
   font-size: 1.8rem;
   color: white;
   border-radius: 0;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    background-color: hsla(150, 40%, 80%, 0.2);
+  }
   &:required {
     box-shadow: none;
   }
@@ -86,8 +99,10 @@ const StyledInputEmail = styled.input`
   }
   &:focus {
     border-bottom: 1px solid white;
+    background-color: hsla(150, 40%, 80%, 0.2);
     &:focus + ${Label}, &:valid + ${Label} {
       transform: translate(-5px, -30px) scale(0.8);
+
       color: white;
     }
   }
@@ -115,10 +130,16 @@ const StyledTextarea = styled.textarea`
   color: white;
   font-family: 'Raleway', sans-serif;
   box-shadow: none;
+  transition: all 200ms ease-in-out;
+
+  :hover {
+    background-color: hsla(150, 40%, 80%, 0.2);
+  }
 
   :focus {
     outline: none;
     border: 1px solid white;
+    background-color: hsla(150, 40%, 80%, 0.2);
   }
 `
 
@@ -158,7 +179,7 @@ const StyledCheck = styled(FiCheckCircle)`
   margin: 0;
   padding: 0;
   position: absolute;
-  font-size: 2rem;
+  font-size: 2.2rem;
   top: 0;
   position: relative;
   color: white;
