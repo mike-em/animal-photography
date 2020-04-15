@@ -8,6 +8,7 @@ const StyledContainer = styled.div`
   width: 100vw;
   height: 100%;
   background-color: hsl(0, 20%, 90%);
+  margin-top: 15px;
 
   @media ${device.tablet} {
     min-height: 100vh;
@@ -15,10 +16,12 @@ const StyledContainer = styled.div`
 
   @media ${device.laptop} {
     display: flex;
+    min-height: 100vh;
   }
 `
 const StyledImageContainer = styled.div`
   width: 95%;
+  margin: 40px 0;
 
   @media ${device.laptop} {
     width: 85%;
@@ -48,6 +51,10 @@ const StyledDescription = styled.div`
     border: 15px solid white;
     background-color: hsl(180, 50%, 85%);
     z-index: 20;
+  }
+
+  @media (max-height: 700px) {
+    margin-top: -100px;
   }
 
   h1 {

@@ -15,12 +15,12 @@ const StyledContainer = styled.div`
   overflow: hidden;
 
   @media ${device.tablet} {
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
   }
 
   @media ${device.laptop} {
     display: flex;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
   }
 `
 const StyledImageContainer = styled.div`
@@ -31,12 +31,12 @@ const StyledImageContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    margin-top: 50px;
+    margin: 40px 0;
     width: 75%;
   }
 
   @media ${device.desktop} {
-    margin-top: 0;
+    margin-top: 40px;
     width: 60%;
   }
 
