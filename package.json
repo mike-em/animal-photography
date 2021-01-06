@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "antd": "^4.1.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.10.7",
     "browser-monads": "^1.0.0",
     "formik": "^2.1.4",
